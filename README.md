@@ -1,4 +1,4 @@
-# Seattle CoderDojo Alexa Skill Workshop
+# Seattle CoderDojo Amazon Alexa Skill Workshop
 This workshop was originally presented on May 20, 2018
 
 ## Shout Outs
@@ -10,7 +10,7 @@ A shout out to StarSwap for their [Instructables tutorial](http://www.instructab
 You're going to need two things to complete this tutorial.
 
 1. A web-addressable python server. We'll show how to use a Cloud9 workspace as one in this tutorial, but that's just one of many ways to get one for free. 
-2. A developer account on https://developer.amazon.com so you can make Alexa skills. This is free. Go sign up.
+2. A developer account on https://developer.amazon.com so you can make Amazon Alexa skills. This is free. Go sign up.
 
 ### Setting up your Python server
 
@@ -40,14 +40,28 @@ Then click the "create workspace" button. It will create a workspace ready to ru
 >
 > The second line is because the most recent version of `pip` (at the time of this writing) actually breaks the `flask-ask` installation, so after upgrading `pip`  a few versions, you then have to downgrade it one. Then you need to install the `cryptography` package because it's a dependency that doesn't get installed automatically and is needed to handle the encrypted requests from Amazon to your server.
 
-## Making Alexa say "Hello, World"
+## Making Amazon Alexa say "Hello, World"
 
-An Alexa skill has two components... an intent and an intent handler. The intent is defined via the Amazon Developers site, where you set up your skill. The intent handler is built with code on your skill server (here that's the code in our Cloud9 workspace).
+An Amazon Alexa skill has two components... an intent and an intent handler. The intent is defined via the Amazon Developers site, where you set up your skill. The intent handler is built with code on your skill server (here that's the code in our Cloud9 workspace).
 
-#### What is an intent? 
+### What is an intent? 
 
-According to the Alexa tech writers: "An intent represents an action that fulfills a user's spoken request." Show of hands, who understands that?
+According to the Amazon Alexa tech writers: "An intent represents an action that fulfills a user's spoken request." Show of hands, who understands that?
 			
-Let's actually break down the word "intent." Your intent is what you mean to do, the result you want to create... "I intended to do my homework right after dinner, but I got distracted." "You came here with the intent of learning how to make an Alexa skill."
+Let's actually break down the word "intent." Your intent is the the reason you do something, related to the result you want to get. Your intent in coming here was to learn how to make an Alexa skill.
 
-An "intent" in this case is a set of rules and information that help the Alexa service understand what someone wants to get from talking to Alexa and then give that to the person. To create a skill, you have to set up the intents it will handle.
+An "intent" in this case is a set of rules and information that help the Amazon Alexa service understand what someone wants to get from talking to Amazon Alexa and then give that to the person. To create a skill, you have to set up the intents it will handle.
+
+### Creating our Hello World intent...
+
+If you're logged into https://developer.amazon.com/home, you'll be in the developer console. In the Amazon Alexa section, choose "Alexa Skills Kit" (the Alexa Voice Service is for building Alexa devices).
+
+In general, you shouldn't have any skills already, assuming this account is new. If you do, we'll ignore them for now. For now you want to click the "Create Skill" button.
+
+You'll be asked to give your skill a name. Obviously something descriptive like MyFirstSkill or HelloWorld is good. Then you'll be asked to select a skill model. Select "Custom" and then click the "Create Skill" button on that page.
+
+Our basic skill template has been created, but we still need to fill in a couple of blanks and add an intent.
+
+First, in the lefthand navigation bar, click "Invocation Name." This is where we'll set thename of our skill so we can call it. I call it "my first talker," but you could call it "hello world" or even "steven universe." **Note** how all of those are lower case.
+
+Now to add an intent. You have 4 already built in for housekeeping purposes, but we don't need to touch those right now. Click the "add" icon at the top of the list.
