@@ -84,3 +84,42 @@ At this point it asks for "sample utterances." These are things a user might say
 
 You're done configuring your intent. All that's left is to tell Alexa where to find your skill handler.
 
+**Switch over to Cloud 9. **
+
+**Open the HelloWorld.py file. **
+
+**Click "Run."**
+
+You'll get a message in the terminal window stating "Your code is running at https://[workspace name]-[user name].c9users.io."
+
+**Copy that URL. **
+
+**Go back to the Amazon Developers site. ** **Click the "Endpoint" tab on the left.** 
+
+**Select HTTPS as the service endpoint type.**
+
+**In the Default Region, paste the URL you copied from Cloud9.**
+
+**In the box that says "Select SSL certificate type," choose the option that begins with "My development endpoint is a sub-domain of a domain that has a wildcard certificate..."**
+
+**Click the "Save Model" button.**
+
+**Click on your "HelloWorld" intent from the intents list.** **Click on "Build Model."**
+
+### Testing your skill
+
+Now that everything is running, filled in, and built, it is time to test your skill.
+
+Click on the test tab in the upper menu. If it says "test is disabled for this skill," click the toggle button next to that.
+
+Clicking on the microphone symbol may cause the browser to ask you for permission to access the microphone. Approve it.
+
+Now you can test your skill. 
+
+**Click the microphone and say "ask [skill invocation name] to say hello" or type it in the text box and hit enter.**
+
+If you just ask Amazon Alexa to "say hello," that's all she says. But if you tell Alexa to ask "my first talker" or "steven universe" or whatever name you used to "say hello," you should get back "Hello World."
+
+**To make this more interesting, change "Hello, World" to some other reply.**
+
+And that's the end of this set-up tutorial. Next, let's look at some of the other skill-making lessons by picking another .md file from our repository.
