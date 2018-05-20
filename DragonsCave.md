@@ -1,6 +1,6 @@
 # **Lesson 2: Exploring the Dragon's Cave**
 
-Now that you've got your server set up and have successfully ran your first Hello World, let's make Amazon Alexa play a simple game... The Dragon's Cave.
+Now that you've got your server set up and have successfully run your first Hello World, let's make Amazon Alexa play a simple game... The Dragon's Cave.
 
 Since we're doing this in Python, I thought it would be great to borrow one of the early games from Al Sweigart's amazing book "[Invent Your Own Computer Games with Python, 4th Edition](https://inventwithpython.com/#invent)." He calls it "Dragon Realm," but it's a classic game I recall by another name.
 
@@ -20,14 +20,16 @@ Now because we'll be opening the skill with its invocation name instead of askin
 
 This is where players will be able to select the first cave. But what might they call it? Let's set up a bunch of sample utterances for it... "one, cave one, left, left cave, the first one, first cave the first."
 
-
-
 ### Intent 2: caveTwoChoice
 
 We'll do a similar thing here... "Second one, second cave, second, right, tight cave two cave two."
 
-
-
 ### Set the Endpoint and Build it
 
 Use the same endpoint you used for Hello World. Then build the skill.
+
+
+
+## Setting up the code on Cloud9
+
+Time ran out before I could write up this part of the tutorial, but there's working code in the repo. We'll work with it in class, and this readme will get expanded this summer.
