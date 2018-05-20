@@ -5,6 +5,8 @@ This workshop was originally presented on May 20, 2018
 
 A shout out to StarSwap for their [Instructables tutorial](http://www.instructables.com/id/Make-Alexa-Skills-With-Cloud9-No-Credit-Card-or-Ha/). It convinced me that this could be done. The fact that it's broken in multiple ways less than 4 months after publication is a testament to how fast things move in this industry, but it was inspiring.
 
+Shout out also to mentor Nick Peters who dogfooded the Hello World! project and provided some valuable contributions to this document. 
+
 ## Setting up your development environment
 
 You're going to need two things to complete this tutorial.
@@ -14,31 +16,29 @@ You're going to need two things to complete this tutorial.
 
 ### Setting up your Python server
 
-These instructions assume you followed the instructions we provided to request a Cloud9 account and you signed up.
+These instructions assume you followed the instructions we provided to request a Cloud9 account and you signed up. We exceeded our 50 team members, but at last check, while new sign-ups got an error message about that, they still got a free account set-up.
 
-Login to your Cloud9 account and click "Create a new workspace."
+**Login to your Cloud9 account and click "Create a new workspace."**
 
-For the workspace name, use whatever you want. You can also use whatever description you want. 
+For the workspace name, use "Seattle CoderDojo Alexa Class".  Leave the Description blank. 
 
-The team should already be selected as "Seattle CoderDojo." If you did not get your invitation from Seattle CoderDojo, you will not have this option.
+Select a Hosted Workspace. Leave it public.
 
-Click "Clone Workspace" and for the workspace select "yiddishninja/alexa-workshop."
+In the "Clone from Git or Mercurial URL" enter the URL for this repository:
 
-Then click the "create workspace" button. It will create a workspace ready to run the Hello World program we'll work with first.
+​	https://github.com/seattlecoderdojo/alexa-workshop.git
 
-> **FOR OTHER INSTRUCTORS / STUDENTS**
->
-> You may not be able to clone our workspace. This repository contains all the scripts you'll need. To get the Cloud9 workspace ready to run them, you'll need to run a handful of commands.
->
-> ```shell
-> sudo -H pip2 install --upgrade pip
-> sudo python -m pip install pip==9.0.3 --upgrade --force-reinstall 
-> sudo -H pip install 'cryptography<2.2'
-> sudo -H pip install flask
-> sudo -H pip install flask-ask
-> ```
->
-> The second line is because the most recent version of `pip` (at the time of this writing) actually breaks the `flask-ask` installation, so after upgrading `pip`  a few versions, you then have to downgrade it one. Then you need to install the `cryptography` package because it's a dependency that doesn't get installed automatically and is needed to handle the encrypted requests from Amazon to your server.
+**Select the Python template.**
+
+Then click the "create workspace" button. It will create a workspace.
+
+### Setting up your Python Workspace
+
+We still need to install the Python components you'll need.
+
+In the bash terminal in the lower part of your screen, type 
+
+​	`sudo sh install.sh` 
 
 ## Making Amazon Alexa say "Hello, World"
 
@@ -80,15 +80,15 @@ Give it the name "HelloWorld" and click the "Create Custom Intent" button to go 
 
 At this point it asks for "sample utterances." These are things a user might say to convey this intent. For this we'll go with two. 
 
-**In the Sample Utterances box, type "say hello to me" and then click the plus symbol in the right side of the box to add it. Then type "greet me" and do the same to add your second sample utterance.**
+**In the Sample Utterances box, type "say hello to me" and then click the plus symbol in the right side of the box to add it. Then type "greet me" and do the same to add your second sample utterance. Finally add "say hello."**
 
-You're done configuring your intent. All that's left is to tell Alexa where to find your skill handler.
+You're done configuring your intent and your skill will be able to respond to all three utterances.  All that's left is to tell Alexa where to find your skill handler.
 
 **Switch over to Cloud 9. **
 
 **Open the HelloWorld.py file. **
 
-**Click "Run."**
+**Right click on the file and select "Run."**
 
 You'll get a message in the terminal window stating "Your code is running at https://[workspace name]-[user name].c9users.io."
 
@@ -103,6 +103,8 @@ You'll get a message in the terminal window stating "Your code is running at htt
 **In the box that says "Select SSL certificate type," choose the option that begins with "My development endpoint is a sub-domain of a domain that has a wildcard certificate..."**
 
 **Click the "Save Model" button.**
+
+You'll notice a message pops up saying "If you make any new changes, you will need to rebuild your model for them to take effect." This means we have saved the configuration for our skill, but we still need to build the model of our skill.
 
 **Click on your "HelloWorld" intent from the intents list.** **Click on "Build Model."**
 
@@ -123,3 +125,12 @@ If you just ask Amazon Alexa to "say hello," that's all she says. But if you tel
 **To make this more interesting, change "Hello, World" to some other reply.**
 
 And that's the end of this set-up tutorial. Next, let's look at some of the other skill-making lessons by picking another .md file from our repository.
+
+**To make this even more interesting, add another intent and another function for replying to it.**
+
+Tell Alexa to ask your skill to do something else like say she's a teapot and have it get her to respond "I'm a little teapot, short and stout. My handle and spout are virtual."
+
+## All Done?
+
+Have no fear... well, maybe a little. In our next skill, you'll go looking for treasure, but there may be dragons around.
+
